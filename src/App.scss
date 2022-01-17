@@ -12,9 +12,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #97a6ff;
     font-family: arial;
     color: rgb(26, 26, 26);
+  }
+
+  body{
+    background: rgb(216, 158, 241);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 203, 255, 1) 0%,
+      rgba(216, 158, 241, 1) 100%
+    );
   }
 
 
@@ -22,6 +30,7 @@
       font-family: "Bacalisties";
     font-size: 3em;
     margin-top: 15px;
+    color: #f5f5f5;
   }
 
   .App{
@@ -32,13 +41,13 @@
   }
 
   .text__container{
-
     margin: 75px 0 75px 0;
       &-first{
           display: flex;
           justify-content: center;
           font-family: "Resotho";
           margin: 15px;
+          color: #f5f5f5;
       }
 
       &-second{
@@ -77,8 +86,34 @@
           height: 100px;
           margin-bottom: 20px;
           margin-top: 10px;
-          border-radius: 5px;
-          border: 2px solid whitesmoke;
+          border-radius: 10px;
+          border: 1px solid whitesmoke;
           padding: 15px;
+          font-size: 1em;
+          outline: none;
+          background-color: transparent;
+      }
+
+      &-button{
+        justify-content: center;
+        display: flex;
+
+        &-validate{
+            width: 180px;
+            font-family: "Resotho";
+            height: 50px;
+            color: whitesmoke;
+            font-size: 1.2em;
+            border-radius: 10px;
+            background-color: transparent;
+            border: 1px solid whitesmoke;
+            transition: all 0.8s;
+            cursor: pointer;
+            &:hover{
+                background-color: #1fc2f3;
+                border-color: rgba(128,0,128,.564);
+                color: rgba(128,0,128,.564);
+            }
+        }
       }
   }
