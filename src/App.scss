@@ -41,7 +41,7 @@
   }
 
   .text__container{
-    margin: 75px 0 75px 0;
+    margin: 75px 0 35px 0;
       &-first{
           display: flex;
           justify-content: center;
@@ -120,5 +120,70 @@
   }
 
 .messageAfterSubmitted__container{
-  height: 100vh;
+  display: flex;
+  height: 93vh;
+
+  &-thanks{
+    margin-bottom: 20px;
+    font-size: 5em;
+    color: whitesmoke;
+    font-family: "Bacalisties";
+  }
+
+  &-text{
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+&-mainText{
+  color: whitesmoke;
+  margin-bottom: 10px;
+  text-align: center;
+
+  &-code{
+    margin-top: 30px;
+    color: whitesmoke;
+  }
+}
+}
+
+#code{
+  color: rgb(142, 33, 175);
+  font-size: 1.6em;
+}
+
+#reduc{
+  font-size: 1.4em;
+  color: whitesmoke;
+}
+
+@media screen and (max-width: 750px) {
+    .messageAfterSubmitted__container-thanks{
+      font-size: 2.3em;
+    }
+
+    .text__container-first{
+      text-align: center;
+    }
+
+    .text__container{
+      padding: 0 20px;
+      font-size: 0.9em;
+    }
+
+    .text__container-third{
+      text-align:center;
+      margin-top: 50px;
+    }
+
+    label{
+      font-size: 0.9em;
+    }
+
+    .form__input{
+      width: 95%;
+    }
 }

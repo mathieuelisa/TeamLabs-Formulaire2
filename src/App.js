@@ -16,7 +16,16 @@ function App() {
 
       {messageSubmitted ? 
       <div className="messageAfterSubmitted__container">
-          <p>Merci </p>
+        <div className="messageAfterSubmitted__container-text">
+            <h1 className="messageAfterSubmitted__container-thanks">Un grand merci 	&#10084;</h1>
+            <p className="messageAfterSubmitted__container-mainText">Ton retour me permettra d'ameliorer si besoin cette experience pour les futurs participants ou pour toi meme 
+            car ca serai un plaisir de te revoir.
+            </p>
+
+            <p className="messageAfterSubmitted__container-mainText">Pour te remercier je t'offre <strong id="reduc">10%</strong> sur ta prochaine venue, valable <strong id="reduc">6 mois</strong> et <strong id="reduc">10%</strong> sur les personnes qui t'accompagneront</p>
+
+            <p className="messageAfterSubmitted__container-mainText-code">Voici ton code: <strong id="code">CHLABS10</strong></p>
+        </div>
       </div> : 
       <> 
         <div className="text__container">
