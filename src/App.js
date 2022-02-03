@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./App.scss";
 import Header from "./Components/Header";
 
+import { db } from "./firebase"
+
 function App() {
   const [messageSubmitted, setMessageSubmitted] = useState(false)
   const [state, setState] = useState({
@@ -12,11 +14,7 @@ function App() {
     voyageEnAsie : ""
   })
 
-  function submit(e) {
-    e.preventDefault();
-    console.log("test valide button");
-    setMessageSubmitted(true)
-  }
+
 
   function handleChange(evt) {
     const value = evt.target.value;
@@ -24,6 +22,22 @@ function App() {
       ...state,
       [evt.target.name]: value
     });
+  }
+
+  function submit(e) {
+    e.preventDefault();
+    
+    db.collection("contacts").add({
+      menuApprecie: state.menuApprecie,
+      platsAppecie : state.platsAppecie,
+      platsVoyage: state.platsVoyage,
+      aAmeliorer: state.aAmeliorer,
+      voyageEnAsie : state.voyageEnAsie
+    }).then(()=>{
+      setMessageSubmitted(true)
+    }).catch((err)=>{
+      alert(err.message)
+    })
   }
 
   console.log(state)
