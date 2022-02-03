@@ -4,12 +4,30 @@ import Header from "./Components/Header";
 
 function App() {
   const [messageSubmitted, setMessageSubmitted] = useState(false)
+  const [state, setState] = useState({
+    menuApprecie : "",
+    platsAppecie : "",
+    platsVoyage: "",
+    aAmeliorer: "",
+    voyageEnAsie : ""
+  })
 
   function submit(e) {
     e.preventDefault();
     console.log("test valide button");
     setMessageSubmitted(true)
   }
+
+  function handleChange(evt) {
+    const value = evt.target.value;
+    setState({
+      ...state,
+      [evt.target.name]: value
+    });
+  }
+
+  console.log(state)
+
   return (
     <div className="App">
       <Header />
@@ -18,8 +36,8 @@ function App() {
       <div className="messageAfterSubmitted__container">
         <div className="messageAfterSubmitted__container-text">
             <h1 className="messageAfterSubmitted__container-thanks">Un grand merci 	&#10084;</h1>
-            <p className="messageAfterSubmitted__container-mainText">Ton retour me permettra d'ameliorer si besoin cette experience pour les futurs participants ou pour toi meme 
-            car ca serai un plaisir de te revoir.
+            <p className="messageAfterSubmitted__container-mainText">Ton retour me permettra d'ameliorer si besoin cette experience pour les futurs participants ou pour toi même 
+            car ça serai un plaisir de te revoir.
             </p>
 
             <p className="messageAfterSubmitted__container-mainText">Pour te remercier je t'offre <strong id="reduc">10%</strong> sur ta prochaine venue, valable <strong id="reduc">6 mois</strong> et <strong id="reduc">10%</strong> sur les personnes qui t'accompagneront</p>
@@ -30,7 +48,7 @@ function App() {
       <> 
         <div className="text__container">
           <h3 className="text__container-first">
-            Ca y est tu fais partie des membres elites de Chill labs, felicitation
+            Ca y est tu fais partie des membres élites de Chill labs, félicitation
             🏆 !!
           </h3>
 
@@ -48,7 +66,7 @@ function App() {
 
 
           <h4 className="text__container-third">
-            Peut-on revenir rapidement sur ton experience ?{" "}
+            Peut-on revenir rapidement sur ton expérience ?{" "}
           </h4>
         </div>
 
@@ -60,7 +78,8 @@ function App() {
                 <textarea
                   className="form__input-firstQuestion"
                   type="text"
-                  name="like"
+                  name="menuApprecie"
+                  onChange={handleChange}
                 />
               </div>
             </label>
@@ -71,7 +90,8 @@ function App() {
                 <textarea
                   className="form__input-secondQuestion"
                   type="text"
-                  name="like"
+                  name="platsAppecie"
+                  onChange={handleChange}
                 />
               </div>
             </label>
@@ -82,29 +102,31 @@ function App() {
                 <textarea
                   className="form__input-thirdQuestion"
                   type="text"
-                  name="like"
+                  name="platsVoyage"
+                  onChange={handleChange}
                 />
               </div>
             </label>
 
             <label className="form__input-label">
-              Qu'est ce que tu aimerais ameliorer ?
+              Qu'est ce que tu aimerais améliorer ?
               <div className="form__input">
                 <textarea
                   className="form__input-fourthQuestion"
                   type="text"
-                  name="like"
+                  name="aAmeliorer"
                 />
               </div>
             </label>
 
             <label className="form__input-label">
-              Consideres- tu que tu as voyagé le temps d'un repas en Asie ?
+              Considères- tu que tu as voyagé le temps d'un repas en Asie ?
               <div className="form__input">
                 <textarea
                   className="form__input-fifthQuestion"
                   type="text"
-                  name="like"
+                  name="voyageEnAsie"
+                  onChange={handleChange}
                 />
               </div>
             </label>
